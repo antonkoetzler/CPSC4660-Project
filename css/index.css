@@ -1,0 +1,36 @@
+body
+{
+  margin: 0; padding: 0;
+  background: #101010;
+}
+
+main
+{
+  height: calc(100% - 81px); width: 100%;
+  top: 81px; left: 0;
+  position: fixed;
+}
+
+#topbar
+{
+  height: 80px; width: 100%;
+  border-bottom: 1px solid #EDE6D6;
+  text-align: center;
+  top: 0; left: 0;
+  position: fixed;
+}
+#topbar h1
+{
+  color: #EDE6D6;
+  margin: 5px 0 0 0;
+}
+#topbar h2
+{
+  color: #EDE6D6;
+  margin: 5px 0 0 0;
+}
+
+@media only screen and (max-width: 685px)
+{
+  #topbar { height: 100px; }
+}

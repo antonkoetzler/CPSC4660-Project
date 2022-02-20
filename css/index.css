@@ -9,6 +9,8 @@ main
   height: calc(100% - 81px); width: 100%;
   top: 81px; left: 0;
   position: fixed;
+  text-align: center;
+  overflow-y: auto;
 }
 
 #topbar
@@ -29,6 +31,14 @@ main
   color: #EDE6D6;
   margin: 5px 0 0 0;
 }
+
+.stagesHeader
+{
+  color: #EDE6D6;
+  margin-bottom: 5px;
+}
+
+.stageDescription { font-size: 20px; }
 
 @media only screen and (max-width: 685px)
 {

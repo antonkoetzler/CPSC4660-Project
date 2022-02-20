@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<query>
+  <username>
+    flqn
+  </username>
+
+  <name>
+    Anton Koetzler-Faust
+  </name>
+
+  <dob format="YY/MM/DD">
+    2022/07/05
+  </dob>
+
+  <password>
+    123hello456
+  </password>
+</query>

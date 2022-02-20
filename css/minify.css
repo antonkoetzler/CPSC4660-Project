@@ -1,0 +1,15 @@
+#XML_Document_Container
+{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#XML_Document_Container img
+{
+  margin: 5px;
+}
+
+.resultsHeader { color: #EDE6D6; }
+.resultsText { color: white; font-size: 20px; }

@@ -58,7 +58,45 @@
     // Getting the result of the execution and printing to page
     $execution_time = $timer_end - $timer_start;
     echo "<p class='resultsText' style='margin-bottom: 50px;'>Execution time to parse: ".$execution_time."</p>";
-    ?>
+
+
+
+    // Starting timer to test the execution of Shakespeare.xml
+    $timer_start = microtime(true);
+
+    // Getting Shakespeare.xml
+    $Shakespeare = simplexml_load_file("./xml/Shakespeare.xml");
+
+    // Parsing the information in Shakespeare.xml (putting into a list)
+    $shakespeareArray = array();
+    foreach($Shakespeare->children() as $element)
+      array_push($shakespeareArray, $element->getName(), $element);
+    echo "<h3 class='resultsHeader'>Shakespeare.xml's contents</h3>";
+    echo "<p class='resultsText'>Size of the array (processing information): ".sizeof($shakespeareArray)."</p>";
+
+    // Ending the timer
+    $timer_end = microtime(true);
+
+    // Getting the result of the execution and printing to page
+    $execution_time = $timer_end - $timer_start;
+    echo "<p class='resultsText' style='margin-bottom: 50px;'>Execution time to parse: ".$execution_time."</p>";
+
+
+
+    // Starting timer to test the execution of ShakespeareMinified.xml
+    $time_start = microtime(true);
+
+    // Getting ShakespeareMinified.xml
+    $ShakespeareMinified = simplexml_load_file("./xml/ShakespeareMinified.xml");
+
+    echo "<h3 class='resultsHeader'>ShakespeareMinified.xml's contents</h3>";
+
+    // Ending the timer
+    $timer_end = microtime(true);
+
+    // Getting the result of the execution and printing to page
+    echo "<p class='resultsText' style='margin-bottom: 50px;'>Execution time to parse: ".$execution_time."</p>";
+   ?>
   </main>
 
 </html>

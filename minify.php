@@ -10,7 +10,7 @@
 <body>
   <header id="topbar">
     <h1>Stage 1</h1>
-    <h2>Simple XML document vs minified form of this simple XML document</h2>
+    <h2>XML document vs minified form of this simple XML document</h2>
   </header>
 
   <main>
@@ -37,7 +37,7 @@
 
     // Getting the result of the execution and printing to page
     $execution_time = $timer_end - $timer_start;
-    echo "<p class='resultsText' style='margin-bottom: 50px;'>Execution time to parse: ".$execution_time."</p>";
+    echo "<p class='resultsText' style='margin-bottom: 50px;'>Execution time to parse: ".$execution_time."μs</p>";
 
 
 
@@ -57,45 +57,51 @@
 
     // Getting the result of the execution and printing to page
     $execution_time = $timer_end - $timer_start;
-    echo "<p class='resultsText' style='margin-bottom: 50px;'>Execution time to parse: ".$execution_time."</p>";
+    echo "<p class='resultsText' style='margin-bottom: 50px;'>Execution time to parse: ".$execution_time."μs</p>";
 
 
 
     // Starting timer to test the execution of Shakespeare.xml
     $timer_start = microtime(true);
 
-    // Getting Shakespeare.xml
-    $Shakespeare = simplexml_load_file("./xml/Shakespeare.xml");
+    // Getting uwm.xml
+    $uwm = simplexml_load_file("./xml/uwm.xml");
 
-    // Parsing the information in Shakespeare.xml (putting into a list)
-    $shakespeareArray = array();
-    foreach($Shakespeare->children() as $element)
-      array_push($shakespeareArray, $element->getName(), $element);
-    echo "<h3 class='resultsHeader'>Shakespeare.xml's contents</h3>";
-    echo "<p class='resultsText'>Size of the array (processing information): ".sizeof($shakespeareArray)."</p>";
+    // Parsing the information in uwm.xml
+    $uwmArray = array();
+    echo "<h3 class='resultsHeader'>uwm.xml's contents</h3>";
+    foreach($uwm->children() as $element)
+      array_push($uwmArray, $element->getName(), $element);
+    echo "<p class='resultsText'>\$uwmArray's size (all information processed): ".sizeof($uwmArray)."μs</p>";
 
     // Ending the timer
     $timer_end = microtime(true);
 
     // Getting the result of the execution and printing to page
     $execution_time = $timer_end - $timer_start;
-    echo "<p class='resultsText' style='margin-bottom: 50px;'>Execution time to parse: ".$execution_time."</p>";
+    echo "<p class='resultsText' style='margin-bottom: 50px;'>Execution time to parse: ".$execution_time."μs</p>";
 
 
 
-    // Starting timer to test the execution of ShakespeareMinified.xml
-    $time_start = microtime(true);
+    // Starting timer to test the execution of uwmMinified.xml
+    $timer_start = microtime(true);
 
-    // Getting ShakespeareMinified.xml
-    $ShakespeareMinified = simplexml_load_file("./xml/ShakespeareMinified.xml");
+    // Getting uwmMinified.xml
+    $uwmMinified = simplexml_load_file("./xml/uwmMinified.xml");
 
-    echo "<h3 class='resultsHeader'>ShakespeareMinified.xml's contents</h3>";
+    // Parsing the information in uwmMinfied.xml
+    $uwmMinifiedArray = array();
+    echo "<h3 class='resultsHeader'>uwmMinified.xml's contents</h3>";
+    foreach($uwmMinified->children() as $element)
+      array_push($uwmMinifiedArray, $element->getName(), $element);
+    echo "<p class='resultsText'>\$uwmMinifiedArray's size (all information processed): ".sizeof($uwmArray)."</p>";
 
     // Ending the timer
     $timer_end = microtime(true);
 
     // Getting the result of the execution and printing to page
-    echo "<p class='resultsText' style='margin-bottom: 50px;'>Execution time to parse: ".$execution_time."</p>";
+    $execution_time = $timer_end - $timer_start;
+    echo "<p class='resultsText' style='margin-bottom: 50px;'>Execution time to parse: ".$execution_time."μs</p>";
    ?>
   </main>
 
